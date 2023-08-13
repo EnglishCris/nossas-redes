@@ -1,0 +1,184 @@
+* {
+  /*usei para dar reset nas dimensões*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*root é o documento com suas configurações principais*/
+  --text-color: #ffffff;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.5);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/MoonStars.svg);
+}
+
+.light {
+  /* essa aqui tem mais prioridade,
+  tudo que tem o --text-color ou --bg-url mudará para essa variação */
+  --text-color: #000000;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/Sun.svg);
+}
+
+body {
+  /* 
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat; 
+    background-position: top center; 
+    background-size: cover; 
+    */
+  /* background: color image repeat position/size*/
+  background: var(--bg-url)
+    /*tive que tirar a config
+  original e colocar em :root*/ no-repeat top
+    center/ cover;
+}
+
+body * {
+  /* eu uso o asterisco para configurar toda a familia netos
+  sobrinhos, avos, irmãos, chegados, descendentes*/
+  font-family: "Inter", sans-serif;
+  color: var(--text-color); /*help!!!*/
+}
+
+#container {
+  /*usamos o # para chamar a div que criamos no html*/
+  width: 360px;
+  /* border: 1px solid red; não usaremos mais */
+  /*margin-right: auto; usamos essas margins para trazer a div pro
+   centro:display: é necessario usarmos as duas; ñ usaremos
+   mais por conta de uma mais fácil que podemos usar*/
+  /*margin-left: auto; podemos, também, utilizar apenas: margin: auto; 
+  existe uma mais facil e simples*/
+  /*margin-top: 56px; same here*/
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+/* profile */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  display: block;
+  width: 112px;
+  margin: auto;
+} /*usamos isso para colocar a img no centro, temos que usar o display
+block para podermos usar o margin auto, pois imagens são elementos
+inline e n aceitam margin auto*/
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  padding-top: 8px;
+}
+
+/* switch */
+#switch {
+  position: relative; /*este elemento pai deve ser declarado como position: relative,
+  pois o seu filho vai funcionar 
+  relativo a ele*/
+  width: 64px;
+  margin: 4px auto; /*alinhamento de 
+  display blok de faz dessa forma*/
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: #ffffff var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /*para fazer sobreposição de camadas, ele libera
+o right, letft, top, bottom, 
+z-index etc*/
+  top: 50%;
+  left: 0;
+  z-index: 1; /*definir que ele está no andar 1, ou seja, posicionado a frente da span, que é o icone de 
+deslizamento*/
+  transform: translateY(
+    -50%
+  ); /*estratégia para alinhar o elemento
+junto com o top:50%*/
+}
+.light #switch button {
+  right: 0;
+  left: initial; /*left que volta para sua maneira inicial*/
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+#lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+#lista li a {
+  display: flex; /* para display em caixas uma do lado
+  da outra*/
+  align-items: center; /*colocar os itens no meio do eixo 
+  x e y*/
+  justify-content: center; /*também para colocar o conteudo
+  no centro da linha*/
+  padding: 16px 24px;
+  background: var(--surface-color); /*red green blue alpha*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px); /*para dar um blur*/
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+/*pseudo-selector*/
+#lista li a:hover {
+  background: var(--surface-color-hover); /*red green blue alpha*/
+  border: 1.5px solid var(--text-color); /*help!!!*/
+}
+
+#socials {
+  display: flex;
+
+  padding: 24px 0;
+  font-size: 24px;
+  justify-content: center;
+}
+
+#socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+/*deixamos o border radius acima para ele não ficar transicionando
+e virando quadrado*/
+#socials a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24 0;
+  text-align: center;
+  font-size: 14px;
+}

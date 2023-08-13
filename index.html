@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Documento HTML 5 -->
+<html lang="pt-br">
+  <!-- help???-->
+  <!-- root, lang é a linguagem -->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- duas tags filhas ou node = nó; 
+    ou parent and children, essa tag é as configuraçoes -->
+    <meta charset="UTF-8" />
+    <!-- meta charset define 
+        o tipo de caracteres: ~ ç etc  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--compativel com navegadores mais antigos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+        viewport: é a parte visível do site, define a largura do device e adaptar
+    de acordo com o dispositivo, por ex: a tela do site se adapta 
+por conta dessa config. initial-scale trabalha o zoom -->
+
+    <title>Conheça-nos</title>
+    <!-- Documento HTML 5 -->
+    ;
+    <link rel="stylesheet" href="style.css" />
+    <!--link: fechamento em sí mesmo,
+    rel: vai dizer que estamos criando um css,
+href vai dizer que estamos usando a pasta style.css-->
+  </head>
+  <body>
+    <div id="container">
+      <div id="profile">
+        <!--cuidado com o fechamento, a tag da imagem tem que estar aqui dentro-->
+        <img src="./assets/avatar.png" alt="foto de Mayk Brito sorrindo" />
+        <p>@maykbrito</p>
+      </div>
+
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+      <!-- fechamento supracitado-->
+      <ul id="lista">
+        <!--outro container para criar listas-->
+        <li>
+          <a href="#">Inscrever-se no NLW</a>
+        </li>
+        <li>
+          <a href="#">Baixar meu e-book</a>
+        </li>
+        <li>
+          <a href="https://github.com/maykbrito" target="_blank"
+            >Ver meu portifólio</a
+          >
+        </li>
+        <li>
+          <a href="https://rocketseat.com.br/explorer" target="_blank"
+            >Conheça o Explorer</a
+          >
+        </li>
+        <!-- target:"_blank" é usado para abrir cont.
+        em outra guia.-->
+      </ul>
+
+      <div id="socials">
+        <a href="https://github.com/maykbrito" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+
+        <a href="https://instagram.com/maykbrito" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="https://youtube.com/maykbrito" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+
+        <a href="https://linkedin.com/in/maykbrito" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+      <footer>
+        Feito com ♥ pela
+        <a href="https://rocketseat.com" target="_blank">Rocketseat</a>
+      </footer>
+    </div>
+    <!-- a tag div serve para criar caixa,
+id means identifier, nós podemos apelidar essa div para usar no css -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
