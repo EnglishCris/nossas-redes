@@ -110,11 +110,17 @@ deslizamento*/
     -50%
   ); /*estratégia para alinhar o elemento
 junto com o top:50%*/
+  animation: slide-back 0.2s;
 }
 .light #switch button {
-  right: 0;
+  animation: slide-in 0.4s forwards;
+  /* right: 0;
   left: initial; /*left que volta para sua maneira inicial*/
 }
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
 #switch span {
   display: block;
   width: 64px;
@@ -193,5 +199,24 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-light);
+  }
+}
+
+/*animation*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
