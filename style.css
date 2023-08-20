@@ -51,7 +51,8 @@ body * {
 
 #container {
   /*usamos o # para chamar a div que criamos no html*/
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /* border: 1px solid red; não usaremos mais */
   /*margin-right: auto; usamos essas margins para trazer a div pro
    centro:display: é necessario usarmos as duas; ñ usaremos
